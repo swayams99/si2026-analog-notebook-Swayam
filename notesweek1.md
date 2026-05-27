@@ -1,4 +1,85 @@
-Title: Simple resistor voltage divider with a pulse input
+# Simple resistor voltage divider with a pulse input
+
+This SPICE netlist simulates a **1:1 resistor voltage divider** driven by a pulsed voltage source. The input goes from 0 V to 5 V with finite rise and fall times, and the transient response is plotted at the output node.
+
+## Netlist
+
+```spice
+* Simple resistor voltage divider with pulse input
+
+R1      vin     vout    1k
+R2      vout    0       1k
+
+Vpulse  vin     0       PULSE 0 5 0.5u 10n 10n 0.5u 1u
+
+.TRAN 0.1u 1.5u
+
+.control
+RUN
+PLOT v(vout)
+.endc
+
+.end
+```
+
+## Line-by-line notes
+
+- `* Simple resistor voltage divider with pulse input`
+  - Comment line. Any line starting with `*` is ignored by SPICE.
+
+- `R1      vin     vout    1k`
+  - Resistor `R1` connects `vin` to `vout`.
+  - Value: 1 kΩ.
+
+- `R2      vout    0       1k`
+  - Resistor `R2` connects `vout` to ground (`0`).
+  - Value: 1 kΩ.
+  - Since `R1 = R2`, the output voltage is half of the input voltage.
+
+- `Vpulse  vin     0       PULSE 0 5 0.5u 10n 10n 0.5u 1u`
+  - Defines a pulse voltage source between `vin` and ground.
+  - `PULSE(v1 v2 td tr tf pw per)` means:
+    - `v1 = 0` → low voltage.
+    - `v2 = 5` → high voltage.
+    - `td = 0.5u` → delay time before the pulse starts.
+    - `tr = 10n` → rise time.
+    - `tf = 10n` → fall time.
+    - `pw = 0.5u` → pulse width.
+    - `per = 1u` → pulse period.
+  - This creates a 0–5 V pulse with a 50% duty cycle.
+
+- `.TRAN 0.1u 1.5u`
+  - Runs transient analysis.
+  - `0.1u` is the time step.
+  - `1.5u` is the total simulation time.
+
+- `.control`
+  - Starts the control block used in NGSPICE.
+
+- `RUN`
+  - Executes the simulation.
+
+- `PLOT v(vout)`
+  - Plots the voltage at node `vout`.
+
+- `.endc`
+  - Ends the control block.
+
+- `.end`
+  - Marks the end of the netlist.
+
+## Expected output
+
+- When the input pulse is high at 5 V, `vout` should be about 2.5 V.
+- When the input pulse is low at 0 V, `vout` should be about 0 V.
+- Because the pulse has finite rise and fall times, the output transitions smoothly instead of changing instantly.
+
+## Useful changes to try
+
+- Change `R1` and `R2` to get a different divider ratio.
+- Add a load resistor at `vout` to see loading effects.
+- Reduce the `.TRAN` step size if you want a more detailed waveform.
+- Increase simulation time to observe more pulse cycles.Title: Simple resistor voltage divider with a pulse input
 Description:
 A SPICE netlist that simulates a 1:1 resistor voltage divider driven by a pulsed voltage source. The input is a 0→5 V pulse (0.5 µs period, 50% duty) with finite rise/fall times. The simulation performs a transient analysis and plots the output node across the lower resistor.
 
