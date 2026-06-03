@@ -1,69 +1,41 @@
 # Diary
 
-Maintain your daily diary on this page.
-📘 Summer Training Diary (Week 1 & Week 2)
-📅 WEEK 1
-🟢 Day 1 (May 25, Monday)
+## Week 1
 
-The first day of the training program began with a comprehensive introduction to the course structure and objectives. The instructor provided an overview of the USB microphone system, explaining its working principle and the role of components such as sensors, analog front-end, and signal processing units. This helped in understanding the practical relevance of the course.
+### Day 1 (May 25, Mon)
+The first day of training began with a comprehensive **course introduction** that outlined the objectives and structure of the program. We were introduced to the **USB microphone system**, learning about its design, working principle, and how signals are captured and processed. This gave us a practical perspective on audio systems and their applications. The session then shifted to **Linux and Git**, two essential tools for engineers. Linux provided exposure to command-line operations, while Git introduced us to version control, which is critical for collaborative development. To assess our baseline knowledge, a **basic circuit quiz** was conducted, covering Ohm’s law, resistive networks, and voltage-current relationships. This helped us identify strengths and areas needing improvement. Overall, the day was a balanced mix of hardware introduction, software tools, and theoretical assessment, ensuring we were well-prepared for the deeper technical sessions ahead.
 
-We were also introduced to the Linux operating system, where basic commands like file navigation, directory management, and permissions were discussed. Additionally, Git was introduced as a version control system, emphasizing its importance in collaborative development. Commands like clone, commit, push, and pull were demonstrated.
+---
 
-The session concluded with a basic circuit assessment quiz, which helped evaluate our understanding of fundamental electronics concepts. Overall, the day laid a strong foundation by combining theoretical insights with essential tools required for upcoming lab work and design tasks.
+### Day 2 (May 26, Tue)
+The second day focused on **linear circuit analysis**. We studied fundamental principles such as **Superposition, Kirchhoff’s Current Law (KCL), Kirchhoff’s Voltage Law (KVL), Node and Mesh analysis, Thevenin’s theorem, Norton’s theorem, and Maximum Power Transfer**. These concepts form the backbone of electrical engineering and are indispensable for analyzing complex networks. The theoretical session was followed by a **Ngspice-xschem lab**, where we simulated practical circuits like voltage dividers and MOSFET characteristics (Id-Vgs Level-1). This hands-on exercise reinforced the theoretical knowledge by allowing us to visualize circuit behavior under different conditions. The lab also emphasized the importance of simulation tools in modern circuit design, bridging the gap between theory and practice. By the end of the day, we had a strong grasp of both analytical methods and their practical applications in circuit design.
 
-🟢 Day 2 (May 26, Tuesday)
+---
 
-On the second day, we focused on linear circuit analysis techniques. Concepts such as Kirchhoff’s Current Law (KCL), Kirchhoff’s Voltage Law (KVL), Superposition Theorem, Node and Mesh analysis were revised in detail. Advanced topics like Thevenin’s and Norton’s theorems, along with Maximum Power Transfer theorem, were also discussed with practical examples.
+### Day 3 (May 27, Wed)
+The third day was dedicated to **RC circuit transient analysis**. We explored how capacitors charge and discharge in response to step inputs, and how the time constant (\(\tau\)) influences circuit behavior. Several problems were solved to understand the mathematical modeling of these transients. The session then moved to **active OpAmp circuits**, where we studied amplifiers, integrators, and differentiators. These circuits are widely used in analog signal processing and form the basis of many real-world applications. In the **Ngspice lab**, we simulated RC circuits to observe their step responses and pulse train behavior, especially when RC values were much larger than the time constant. This practical exercise highlighted how theoretical equations translate into real-world waveforms. The day concluded with a deeper appreciation of how passive and active components interact to shape circuit responses.
 
-In the lab session, we were introduced to ngspice and xschem tools. We simulated a voltage divider circuit to understand basic circuit behavior. Additionally, the Id-Vgs characteristics of a Level-1 MOSFET were plotted, helping us visualize transistor operation.
+---
 
-This hands-on exposure reinforced theoretical understanding. The combination of analytical methods and simulation tools provided deeper insight into circuit design, which is essential for VLSI and analog electronics.
+### Day 4 (May 28, Thu)
+On the fourth day, we studied the **frequency response of linear circuits**, focusing on high-pass and low-pass filters. These filters are essential in signal processing, communication systems, and audio engineering. The theoretical session was supported by slides on RC and active circuits, which clarified how frequency-dependent behavior emerges from simple circuit configurations. In the lab, we were introduced to the **ADALM 2000**, a versatile hardware tool for circuit experimentation. We learned how to set up the device, configure measurements, and analyze signals. This hands-on exposure was invaluable, as it allowed us to connect theoretical knowledge with practical instrumentation. By the end of the day, we had a clear understanding of how circuits respond to different frequency inputs and how to measure these responses using modern tools.
 
-🟢 Day 3 (May 27, Wednesday)
+---
 
-The third day was dedicated to transient analysis of RC circuits. We studied how capacitors charge and discharge over time and derived the exponential equations governing these processes. Step response analysis of RC and CR circuits was discussed, along with their behavior for different input signals like pulse trains.
+### Day 5 (May 29, Fri)
+The fifth day focused on the **Thevenin equivalent of the MEMS microphone**. We studied how complex systems can be simplified into equivalent circuits for easier analysis. This was followed by **modeling the Analog Front-End (AFE) of the amplifier**, which is critical in audio systems for signal conditioning. The lab session continued with the **ADALM 2000**, where we performed practical experiments to validate our theoretical models. This exercise demonstrated how microphones and amplifiers interact, and how equivalent circuit models help in predicting system behavior. The day emphasized the importance of abstraction in engineering, showing how complex devices can be represented with simpler models without losing accuracy. By the end of the session, we had a strong grasp of both theoretical modeling and practical validation using modern lab tools.
 
-Special emphasis was given to the condition where RC is much greater than the signal time constant. The session also introduced active circuits using operational amplifiers, including inverting and non-inverting configurations.
+## Week 2
 
-In the lab, we simulated RC circuits using ngspice and observed their transient responses. These experiments provided clarity on theoretical concepts and highlighted the importance of time constants in practical applications like filters.
+### Day 6 (June 1, Mon)
+The sixth day was heavily focused on **laboratory work**. We began by modeling the **MEMS microphone** and its **Analog Front-End (AFE)**. This exercise helped us understand how miniature microphones convert acoustic signals into electrical outputs, and how the AFE amplifies and conditions those signals for further processing. The modeling process involved analyzing equivalent circuits and simulating their responses. Following this, we were introduced to the **ADALM 2000 hardware platform**, which is a versatile tool for real-time circuit testing. We learned how to configure the device, connect probes, and measure signals. The lab also included practical exercises on **voltage dividers** and **Thevenin equivalence**, reinforcing the theoretical concepts studied earlier. By the end of the day, we had hands-on experience in bridging theory with practice, and a deeper appreciation for how MEMS devices and analog circuits interact in real-world applications.
 
-🟢 Day 4 (May 28, Thursday)
+---
 
-On the fourth day, we explored the frequency response of linear circuits. Concepts such as low-pass and high-pass filters were discussed in detail, including cutoff frequency and gain characteristics.
+### Day 7 (June 2, Tue)
+On the seventh day, we were introduced to the **Integrated Circuit (IC) design flow**. This session explained the step-by-step process of designing ICs, starting from specification, schematic design, simulation, layout, verification, and finally fabrication. Understanding this flow is crucial for anyone aspiring to work in semiconductor industries. The lecture emphasized how each stage requires precision and collaboration across multiple teams. In the lab, we conducted **microphone and AFE testing and characterization**. This involved measuring parameters such as gain, bandwidth, and noise levels, and comparing them against theoretical predictions. We also learned how to identify discrepancies between modeled behavior and actual hardware performance. This day highlighted the importance of characterization in validating designs and ensuring reliability. By the end of the session, we had a clear picture of how IC design principles are applied to real devices like microphones and amplifiers.
 
-Slides on RC and active circuits helped visualize these concepts. In the lab session, we were introduced to the ADALM 2000 hardware platform. We learned how to use it for signal generation and waveform observation.
+---
 
-This hands-on experience bridged the gap between simulation and real hardware implementation. Understanding frequency response is crucial for designing filters and communication systems.
-
-🟢 Day 5 (May 29, Friday)
-
-The fifth day focused on practical system modeling. We studied the Thevenin equivalent of a MEMS microphone, simplifying its complex structure into an equivalent circuit.
-
-The concept of Analog Front-End (AFE) modeling was introduced, where amplification and signal conditioning stages were analyzed. Understanding AFE is essential for processing weak signals from sensors.
-
-In the lab, we continued working with ADALM 2000, gaining more confidence in handling real instruments. This session helped connect circuit theory with real-world electronic systems.
-
-📅 WEEK 2
-🟡 Day 6 (June 1, Monday)
-
-The sixth day was focused on lab-based learning. We worked on modeling the MEMS microphone and its Analog Front-End (AFE), understanding signal flow from the sensor to the amplifier stage.
-
-We also revised voltage divider circuits and Thevenin equivalence through practical implementation. The ADALM 2000 platform was used extensively for measurements and waveform observation.
-
-This session strengthened our understanding of circuit fundamentals and emphasized the importance of accurate modeling in predicting system behavior.
-
-🟡 Day 7 (June 2, Tuesday)
-
-On the seventh day, we were introduced to the IC design flow. The complete process from specification to fabrication was explained, including schematic design, simulation, layout, verification, and testing.
-
-In the lab, we performed testing and characterization of the microphone and AFE system. Parameters such as gain, noise, and frequency response were analyzed.
-
-This session was highly informative as it connected theoretical knowledge with industry practices in VLSI and IC design.
-
-🟡 Day 8 (June 3, Wednesday)
-
-The eighth day introduced passive devices such as resistors, capacitors, and inductors. Their physical structures, characteristics, and roles in circuits were discussed.
-
-The importance of passive components in filtering, energy storage, and signal shaping was emphasized. Although the lab session was yet to be finalized, the theoretical discussion provided a strong foundation.
-
-This session marked a transition toward device-level understanding, which is essential for advanced electronics and VLSI design.
+### Day 8 (June 3, Wed)
+The eighth day introduced us to **passive devices**, which include resistors, capacitors, and inductors. These components form the foundation of all electronic circuits, and understanding their behavior is essential for designing both analog and digital systems. The lecture covered their physical construction, electrical properties, and frequency-dependent characteristics. We discussed how passive devices are used in filters, timing circuits, and impedance matching networks. Although the lab session was marked as **TBD**, we prepared by reviewing potential experiments involving passive networks, such as RC filters and resonance circuits. The theoretical emphasis was on how passive devices interact with active components to shape overall circuit performance. This day reinforced the idea that even the simplest components play a critical role in complex systems. By the end of the session, we had a strong conceptual foundation that would support more advanced experiments in subsequent weeks.
