@@ -324,20 +324,21 @@ Below is the screenshot of the Scopy Voltmeter tool showing the real-time measur
 
 ## Conclusion
 This experiment validates the functionality of the voltage divider using a **1 kΩ resistor setup** and demonstrates how the **ADALM2000 kit with Scopy** can be used for accurate voltage measurements and visualization.
+ Scopy’s Signal Generator and Oscilloscope modules for educational and diagnostic purposes.
 
-# Signal Generation and Oscilloscope Analysis using ADALM Kit and Scopy
+ # Signal Generation and Oscilloscope Analysis using ADALM Kit and Scopy
 
 ## Overview
-This experiment demonstrates how to use the **Signal Generator** module in **Scopy (v1.5.0)** to produce a sine wave and observe it in real time using the **Oscilloscope tool**. The setup highlights waveform generation, parameter control, and signal visualization.
+This experiment demonstrates how to use the **Signal Generator (W1)** in **Scopy (v1.5.0)** to produce a sine wave and observe it in real time using the **Oscilloscope (Channel 1)**. The setup highlights waveform generation, parameter control, and signal visualization.
 
 ## Circuit / Setup Details
 - **Hardware:** ADALM2000 Active Learning Module  
 - **Software:** Scopy v1.5.0  
-- **Tools Used:** Signal Generator (CH1), Oscilloscope (CH1 & CH2)  
+- **Tools Used:** Signal Generator (W1), Oscilloscope (CH1)  
 - **Waveform Type:** Sine Wave  
 - **Connections:**  
-  - CH1 output from Signal Generator connected to Oscilloscope CH1 input  
-  - CH2 left unconnected (baseline reference)
+  - W1 output from Signal Generator connected to Oscilloscope Channel 1 input  
+  - Channel 2 left unconnected (baseline reference)
 
 ## Signal Generator Parameters
 - **Amplitude:** 10 Vpp (Peak-to-Peak)  
@@ -353,26 +354,29 @@ This experiment demonstrates how to use the **Signal Generator** module in **Sco
 - **Observed Signal:** Clear sine wave at 1 kHz, 10 Vpp  
 
 ### Channel 2 (Blue Line)
-- **Time Base:** 100 µs/div  
-- **Voltage Scale:** 1 V/div  
 - **Observed Signal:** Flat baseline at 0 V (no input connected)
 
 ## Scopy Interface Snapshots
-### Signal Generator
+### Signal Generator Output (W1 → CH1)
 ![Scopy Signal Generator Screenshot](./m2k-labs/Frequencygenoutput.png)
 
-### Oscilloscope
+### Oscilloscope Observation (CH1)
 ![Scopy Oscilloscope Screenshot](./m2k-labs/freqgeninput.png)
 
+*(Ensure the image paths match the actual filenames in your repo.)*
 
 ## Observations
-- The Signal Generator successfully produced a stable sine wave at the configured parameters.  
-- The Oscilloscope confirmed the waveform characteristics (frequency, amplitude, and phase).  
+- The Signal Generator (W1) successfully produced a stable sine wave at the configured parameters.  
+- The Oscilloscope (CH1) confirmed the waveform characteristics (frequency, amplitude, and phase).  
 - Channel 2 remained flat, validating that no signal was applied.  
 - The experiment demonstrates how Scopy integrates signal generation and measurement seamlessly.
 
 ## Conclusion
 This lab illustrates the process of generating and analyzing signals using the **ADALM2000 kit**. The results confirm the accuracy of Scopy’s Signal Generator and Oscilloscope modules for educational and diagnostic purposes.
+
+---
+
+
 
 ---
 
