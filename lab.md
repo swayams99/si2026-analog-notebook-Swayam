@@ -313,7 +313,8 @@ This project demonstrates the use of the **ADALM2000 kit** with **Scopy software
 ## Scopy Interface Snapshot
 Below is the screenshot of the Scopy Voltmeter tool showing the real-time measurements:
 
-![Scopy Voltmeter Screenshot](./Voltagedivider.png)
+![Scopy Voltmeter Screenshot](./m2k-labs/Voltagedivider.png)
+
 
 
 ## Observations
