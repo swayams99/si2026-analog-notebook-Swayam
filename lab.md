@@ -284,8 +284,46 @@ PLOT (2*Vid2#branch)^0.5  vs V(D)
 - The RC circuit showed delayed charging and discharging due to the capacitor.
 - The NMOS study demonstrated how transistor current changes with voltage bias and how SPICE can be used for device characterization.
 
-## Conclusion
+# Voltage Divider Experiment using ADALM Kit and Scopy
 
-This lab introduced three important circuit-analysis ideas: voltage division, Thevenin equivalence, and RC transient response. It also added a transistor-based simulation using an NMOS model. Together, these experiments built a strong foundation for understanding both basic passive circuits and more advanced semiconductor devices.
+## Overview
+This project demonstrates the use of the **ADALM2000 kit** with **Scopy software (v1.5.0)** to measure voltages across a simple voltage divider circuit. The experiment highlights real-time voltage monitoring using Scopy’s **Voltmeter tool**.
+
+## Circuit Details
+- **Circuit Type:** Voltage Divider  
+- **Resistor Used (R):** 1 kΩ  
+- **Configuration:** Two resistors connected in series, input voltage applied across the series, output voltage measured across one resistor.
+
+## Tools Used
+- **Hardware:** ADALM2000 (Analog Devices Active Learning Module)  
+- **Software:** Scopy v1.5.0  
+- **Measurement Tool:** Voltmeter (Channels 1 & 2)
+
+## Measurement Results
+### Channel 1 (Orange)
+- **Minimum Voltage:** 0.233 V  
+- **Maximum Voltage:** 2.522 V  
+- **Current Reading:** 2.472 V DC  
+
+### Channel 2 (Purple)
+- **Minimum Voltage:** -0.067 V  
+- **Maximum Voltage:** 1.249 V  
+- **Current Reading:** 1.247 V DC  
+
+## Scopy Interface Snapshot
+Below is the screenshot of the Scopy Voltmeter tool showing the real-time measurements:
+
+![Scopy Voltmeter Screenshot](<img width="1243" height="739" alt="Screenshot 2026-05-29 145800" src="https://github.com/user-attachments/assets/bf8d1952-47e6-46b4-9c99-0ac389b552d1" />
+)
+
+*(Replace the image path with the actual file name in your repo.)*
+
+## Observations
+- The voltage divider correctly splits the input voltage across the two resistors.  
+- Channel 1 shows the higher voltage (closer to input), while Channel 2 shows the divided voltage.  
+- The readings confirm the expected behavior of a voltage divider circuit.
+
+## Conclusion
+This experiment validates the functionality of the voltage divider using a **1 kΩ resistor setup** and demonstrates how the **ADALM2000 kit with Scopy** can be used for accurate voltage measurements and visualization.
 
 
