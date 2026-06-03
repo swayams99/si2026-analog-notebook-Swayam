@@ -364,7 +364,6 @@ This experiment demonstrates how to use the **Signal Generator** module in **Sco
 ### Oscilloscope
 ![Scopy Oscilloscope Screenshot](./m2k-labs/freqgeninput.png)
 
-*(Ensure the image paths match the actual filenames in your repo.)*
 
 ## Observations
 - The Signal Generator successfully produced a stable sine wave at the configured parameters.  
