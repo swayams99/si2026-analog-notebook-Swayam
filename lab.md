@@ -1,6 +1,5 @@
 # Lab Notebook
 
-Maintain Lab notebook here.
 
 # Lab 1: Getting Started with Vi, Linux Commands, and Git
 
