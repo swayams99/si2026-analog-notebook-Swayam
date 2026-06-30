@@ -389,7 +389,7 @@ The experiments include:
 ## 🖼️ Simulation Snapshots
 
 ### 1. Level‑1 vs Level‑49 Id–Vgs Comparison
-![Level1 vs Level49 Id-Vgs]()
+![Level1 vs Level49 Id-Vgs](Nmosdiodeconnlvl1vslvl49.png)
 
 - **Description:** Id–Vgs characteristics plotted for NMOS using two different SPICE models:
   - **Level‑1:** Simplified analytical MOSFET model.
