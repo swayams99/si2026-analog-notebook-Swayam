@@ -236,6 +236,52 @@ With `R = 1k` and `C = 1p`:
 
 This small time constant makes the output respond quickly, but still not instantly.
 
+## RC Circuit Transient Analysis (Square Wave Response)
+
+### Input Signal
+
+![Input Waveform](./m2k-labs/rccktinput.png)
+
+- **Signal Type:** Square wave  
+- **Amplitude:** 5 V (peak-to-peak)  
+- **Frequency:** 20 Hz  
+- **Observation:**  
+  - Input alternates between high and low levels periodically.  
+  - Sharp transitions represent ideal switching behavior.  
+
+---
+
+### Output Response
+
+![Output Waveform](./m2k-labs/rccktoutput.png)
+
+- **Circuit:** RC network (first-order system)  
+- **Observation:**  
+  - Output shows exponential rise and fall instead of sharp edges.  
+  - During HIGH input → capacitor **charges** exponentially.  
+  - During LOW input → capacitor **discharges** exponentially.  
+
+---
+
+### Key Insights
+
+- The circuit behaves as a **low-pass filter**.  
+- Output smoothens the square wave due to capacitor action.  
+- Time constant governs the response:
+  - $\tau = RC$  
+- Faster transitions → smaller $\tau$  
+- Slower curves → larger $\tau$  
+
+---
+
+### Conclusion
+
+- The RC circuit converts a square wave into a **rounded waveform**.  
+- Demonstrates **charging and discharging characteristics of a capacitor**.  
+- Confirms theoretical first-order transient response.
+
+---
+
 ## NMOS saturation analysis
 
 The lab also included an NMOS study to observe the drain current versus gate-source voltage behavior in saturation. A Level-1 SPICE model was used to estimate device parameters from the square-root current relationship. The script also performs a DC sweep to analyze how the transistor behaves under different bias conditions.
