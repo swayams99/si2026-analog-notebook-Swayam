@@ -461,8 +461,8 @@ The experiments include:
 - These simulations demonstrate how ngspice can be used for **device characterization** in semiconductor design.
 
 ---
-
-### 1. DC Sweep Analysis (Id–Vgs & Vout)
+### Two-Stage CMOS Operational Amplifier: DC and AC Performance Analysis
+## 1. DC Sweep Analysis (Id–Vgs & Vout)
 
 ![DC Sweep](./sch/2stageopamp.png)
 
