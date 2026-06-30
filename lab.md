@@ -409,7 +409,6 @@ This experiment demonstrates how to use the **Signal Generator (W1)** in **Scopy
 ### Oscilloscope Observation (CH1)
 ![Scopy Oscilloscope Screenshot](./m2k-labs/freqgeninput.png)
 
-*(Ensure the image paths match the actual filenames in your repo.)*
 
 ## Observations
 - The Signal Generator (W1) successfully produced a stable sine wave at the configured parameters.  
