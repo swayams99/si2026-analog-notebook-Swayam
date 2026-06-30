@@ -500,7 +500,7 @@ The experiments include:
 
 ---
 
-## 🖼️ Simulation Snapshots
+## Simulation Snapshots
 
 ### 1. Level‑1 vs Level‑49 Id–Vgs Comparison
 ![Level1 vs Level49 Id-Vgs](./sch/Nmosdiodeconnlvl1vslvl49.png)
@@ -556,7 +556,7 @@ The experiments include:
 
 ---
 
-## 📊 Summary of Results
+## Summary of Results
 ## Summary of Results
 
 | Experiment                     | Parameter(s)           | Value(s) |
