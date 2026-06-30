@@ -375,10 +375,88 @@ This experiment demonstrates how to use the **Signal Generator (W1)** in **Scopy
 This lab illustrates the process of generating and analyzing signals using the **ADALM2000 kit**. The results confirm the accuracy of Scopy’s Signal Generator and Oscilloscope modules for educational and diagnostic purposes.
 
 ---
+# MOSFET Parameter Extraction using ngspice (Sky130 PDK)
 
-
+## 📌 Overview
+This report documents simulations performed in **ngspice** to extract MOSFET parameters.  
+The experiments include:
+- **Level‑1 vs Level‑49 model comparison** of Id–Vgs characteristics.
+- **Threshold voltage (Vt) extraction** using different bias points.
+- **Overall parameter calculation** including Vt and body effect coefficient (γ).
 
 ---
+
+## 🖼️ Simulation Snapshots
+
+### 1. Level‑1 vs Level‑49 Id–Vgs Comparison
+![Level1 vs Level49 Id-Vgs]()
+
+- **Description:** Id–Vgs characteristics plotted for NMOS using two different SPICE models:
+  - **Level‑1:** Simplified analytical MOSFET model.
+  - **Level‑49:** BSIM3 advanced model with process parameters.
+- **Observation:**  
+  - Level‑1 curve shows idealized behavior.  
+  - Level‑49 curve captures short‑channel effects, mobility degradation, and realistic threshold voltage.  
+- **Extracted Parameters:**  
+  - \( V_t \approx 0.514 \, \text{V} \)  
+  - \( \gamma \approx 0.737 \)
+
+---
+
+### 2. Threshold Voltage Extraction (Method A)
+![VT Extraction Method A](attachments/CC4oeyA4aNvwNyFKzjVcu.png)
+
+- **Circuit:** Diode‑connected NMOS (gate tied to drain).  
+- **Method:** Sweep \( V_{gs} \) from 0–1.8 V, compute \(\sqrt{I_d}\), and extrapolate.  
+- **Result:**  
+  - \( V_{T0} \approx 0.518 \, \text{V} \)
+
+---
+
+### 3. Threshold Voltage Extraction (Method B)
+![VT Extraction Method B](attachments/9V2EK14HCwS99q9iia4S4.png)
+
+- **Circuit:** Same diode‑connected NMOS, but evaluated at a different bias point.  
+- **Method:** Derivative of \(\sqrt{I_d}\) at \( V_{gs} = 1.2 \, \text{V} \).  
+- **Result:**  
+  - \( V_{T0} \approx 0.729 \, \text{V} \)  
+- **Note:** Higher threshold due to body bias effect.
+
+---
+
+### 4. Overall Vt and γ Calculation
+![VT and Gamma Calculation](attachments/5W1zMtRrGR37pj5qTdLbe.png)
+
+- **Post‑Processing Equations:**
+  - \( K_p = \frac{2}{5} \cdot (d_{rt\_id})^2 \)  
+  - \( V_t = 1.2 - \frac{rt\_id}{d_{rt\_id}} \)  
+  - \( \gamma = \frac{0.7292 - 0.5178}{\sqrt{0.8461} - \sqrt{0.846}} \)  
+- **Extracted Values:**
+  - \( K_p \approx 1.80 \times 10^{-4} \)  
+  - \( V_t \approx 0.518 \, \text{V} \)  
+  - \( \gamma \approx 0.482 \)
+
+---
+
+## 📊 Summary of Results
+
+| **Experiment** | **Parameter(s)** | **Value(s)** |
+|----------------|------------------|--------------|
+| Level‑1 vs Level‑49 | Threshold voltage, γ | \( V_t \approx 0.514 \, \text{V}, \gamma \approx 0.737 \) |
+| Vt Extraction (Method A) | Threshold voltage | \( V_t \approx 0.518 \, \text{V} \) |
+| Vt Extraction (Method B) | Threshold voltage | \( V_t \approx 0.729 \, \text{V} \) |
+| Overall Calculation | Kp, Vt, γ | \( K_p \approx 1.8 \times 10^{-4}, V_t \approx 0.518 \, \text{V}, \gamma \approx 0.482 \) |
+
+---
+
+## 📝 Conclusion
+- **Level‑49 model** provides realistic MOSFET behavior compared to the idealized Level‑1.  
+- **Threshold voltage** varies depending on extraction method and bias point, confirming the **body effect**.  
+- **γ (body effect coefficient)** quantifies the sensitivity of Vt to substrate bias.  
+- These simulations demonstrate how ngspice can be used for **device characterization** in semiconductor design.
+
+---
+
 
 
 
