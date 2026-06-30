@@ -491,7 +491,7 @@ The amplified output maintains the same frequency as the input while exhibiting 
 ---
 # MOSFET Parameter Extraction using ngspice (Sky130 PDK)
 
-## 📌 Overview
+##  Overview
 This report documents simulations performed in **ngspice** to extract MOSFET parameters.  
 The experiments include:
 - **Level‑1 vs Level‑49 model comparison** of Id–Vgs characteristics.
@@ -568,7 +568,7 @@ The experiments include:
 
 ---
 
-## 📝 Conclusion
+## Conclusion
 - **Level‑49 model** provides realistic MOSFET behavior compared to the idealized Level‑1.  
 - **Threshold voltage** varies depending on extraction method and bias point, confirming the **body effect**.  
 - **γ (body effect coefficient)** quantifies the sensitivity of Vt to substrate bias.  
