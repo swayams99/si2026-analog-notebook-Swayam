@@ -462,6 +462,62 @@ The experiments include:
 
 ---
 
+### 1. DC Sweep Analysis (Id–Vgs & Vout)
 
+![DC Sweep](./sch/2stageopamp.png)
+
+- **Circuit:** Two-stage CMOS operational amplifier (differential input + current mirror load + gain stage).  
+- **Method:** DC sweep performed by varying input voltage from 0 to 1.8 V.  
+
+- **Observations:**  
+  - Drain current increases nonlinearly with $V_{gs}$, showing typical MOSFET saturation behavior.  
+  - Output voltage ($V_{out}$) rises gradually after threshold and shows strong gain region.  
+
+- **Key Insight:**  
+  - The transition region indicates the effective threshold voltage of the input pair.  
+  - Nonlinear slope confirms square-law behavior in saturation.
+
+---
+
+### 2. AC Frequency Response (Gain vs Frequency)
+
+![Frequency Response (dB)](./sch/2stageopampfreqanalysis.png)
+
+- **Method:** AC analysis using small-signal input over a wide frequency range (1 Hz to GHz).  
+
+- **Observations:**  
+  - High DC gain of approximately **70–75 dB**.  
+  - Gain decreases with frequency, showing a dominant pole.  
+  - Slope ≈ **-20 dB/decade** initially, indicating single-pole behavior.  
+  - Additional poles cause steeper roll-off at higher frequencies.  
+
+- **Key Parameters:**  
+  - **DC Gain:** ~70 dB  
+  - **Bandwidth:** Limited by dominant pole  
+
+- **Conclusion:**  
+  - Circuit is stable with dominant pole compensation.  
+  - Suitable for low-frequency amplification applications.
+
+---
+
+### 3. Output Frequency Response (Linear Scale)
+
+![Output Response](./sch/2stageopampoutput.png)
+
+- **Method:** AC analysis observing $V_{out}$ magnitude in linear scale.  
+
+- **Observations:**  
+  - Output voltage is high at low frequencies (~5 V gain equivalent).  
+  - Rapid drop in output magnitude after cutoff frequency.  
+
+- **Key Insight:**  
+  - Sharp roll-off indicates dominant pole.  
+  - Confirms gain-bandwidth trade-off.  
+
+- **Conclusion:**  
+  - Strong low-frequency gain but limited high-frequency performance.
+
+---
 
 
