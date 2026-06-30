@@ -389,63 +389,68 @@ The experiments include:
 ## 🖼️ Simulation Snapshots
 
 ### 1. Level‑1 vs Level‑49 Id–Vgs Comparison
-![Level1 vs Level49 Id-Vgs](Nmosdiodeconnlvl1vslvl49.png)
+![Level1 vs Level49 Id-Vgs](./sch/Nmosdiodeconnlvl1vslvl49.png)
 
-- **Description:** Id–Vgs characteristics plotted for NMOS using two different SPICE models:
-  - **Level‑1:** Simplified analytical MOSFET model.
-  - **Level‑49:** BSIM3 advanced model with process parameters.
+- **Description:** Id–Vgs characteristics plotted for NMOS using two different SPICE models:  
+  - **Level-1:** Simplified analytical MOSFET model.  
+  - **Level-49:** BSIM3 advanced model with process parameters.  
+
 - **Observation:**  
-  - Level‑1 curve shows idealized behavior.  
-  - Level‑49 curve captures short‑channel effects, mobility degradation, and realistic threshold voltage.  
+  - Level-1 curve shows idealized behavior.  
+  - Level-49 curve captures short-channel effects, mobility degradation, and realistic threshold voltage.  
+
 - **Extracted Parameters:**  
-  - \( V_t \approx 0.514 \, \text{V} \)  
-  - \( \gamma \approx 0.737 \)
+  - $V_t \approx 0.514 \, \text{V}$  
+  - $\gamma \approx 0.737$  
 
 ---
 
 ### 2. Threshold Voltage Extraction (Method A)
-![VT Extraction Method A](attachments/CC4oeyA4aNvwNyFKzjVcu.png)
-
-- **Circuit:** Diode‑connected NMOS (gate tied to drain).  
-- **Method:** Sweep \( V_{gs} \) from 0–1.8 V, compute \(\sqrt{I_d}\), and extrapolate.  
+![VT Extraction Method A](./sch/NmosdiodeconnVT0lvl48.png)
+- **Circuit:** Diode-connected NMOS (gate tied to drain).  
+- **Method:** Sweep $V_{gs}$ from 0–1.8 V, compute $\sqrt{I_d}$, and extrapolate.  
 - **Result:**  
-  - \( V_{T0} \approx 0.518 \, \text{V} \)
+  - $V_{T0} \approx 0.518 \, \text{V}$  
 
 ---
 
 ### 3. Threshold Voltage Extraction (Method B)
-![VT Extraction Method B](attachments/9V2EK14HCwS99q9iia4S4.png)
+![VT Extraction Method B](./sch/NmosdiodeconnVT1lvl48.png)
 
-- **Circuit:** Same diode‑connected NMOS, but evaluated at a different bias point.  
-- **Method:** Derivative of \(\sqrt{I_d}\) at \( V_{gs} = 1.2 \, \text{V} \).  
+- **Circuit:** Same diode-connected NMOS, but evaluated at a different bias point.  
+- **Method:** Derivative of $\sqrt{I_d}$ at $V_{gs} = 1.2 \, \text{V}$.  
 - **Result:**  
-  - \( V_{T0} \approx 0.729 \, \text{V} \)  
+  - $V_{T0} \approx 0.729 \, \text{V}$  
 - **Note:** Higher threshold due to body bias effect.
-
 ---
 
 ### 4. Overall Vt and γ Calculation
-![VT and Gamma Calculation](attachments/5W1zMtRrGR37pj5qTdLbe.png)
+![VT and Gamma Calculation](./sch/NmosdiodeconnVTandgammalvl48.png)
+### Post-Processing Equations
 
-- **Post‑Processing Equations:**
-  - \( K_p = \frac{2}{5} \cdot (d_{rt\_id})^2 \)  
-  - \( V_t = 1.2 - \frac{rt\_id}{d_{rt\_id}} \)  
-  - \( \gamma = \frac{0.7292 - 0.5178}{\sqrt{0.8461} - \sqrt{0.846}} \)  
-- **Extracted Values:**
-  - \( K_p \approx 1.80 \times 10^{-4} \)  
-  - \( V_t \approx 0.518 \, \text{V} \)  
-  - \( \gamma \approx 0.482 \)
+- Kp = (2/5) × (d_rt_id)²  
+- Vt = 1.2 − (rt_id / d_rt_id)  
+- γ = (0.7292 − 0.5178) / (√0.8461 − √0.846)  
+
+---
+
+### Extracted Values
+
+- Kp ≈ 1.80 × 10⁻⁴  
+- Vt ≈ 0.518 V  
+- γ ≈ 0.482
 
 ---
 
 ## 📊 Summary of Results
+## Summary of Results
 
-| **Experiment** | **Parameter(s)** | **Value(s)** |
-|----------------|------------------|--------------|
-| Level‑1 vs Level‑49 | Threshold voltage, γ | \( V_t \approx 0.514 \, \text{V}, \gamma \approx 0.737 \) |
-| Vt Extraction (Method A) | Threshold voltage | \( V_t \approx 0.518 \, \text{V} \) |
-| Vt Extraction (Method B) | Threshold voltage | \( V_t \approx 0.729 \, \text{V} \) |
-| Overall Calculation | Kp, Vt, γ | \( K_p \approx 1.8 \times 10^{-4}, V_t \approx 0.518 \, \text{V}, \gamma \approx 0.482 \) |
+| Experiment                     | Parameter(s)           | Value(s) |
+|--------------------------------|------------------------|----------|
+| Level-1 vs Level-49           | Threshold voltage, γ   | Vt ≈ 0.514 V, γ ≈ 0.737 |
+| Vt Extraction (Method A)      | Threshold voltage      | Vt ≈ 0.518 V |
+| Vt Extraction (Method B)      | Threshold voltage      | Vt ≈ 0.729 V |
+| Overall Calculation           | Kp, Vt, γ              | Kp ≈ 1.8 × 10⁻⁴, Vt ≈ 0.518 V, γ ≈ 0.482 |
 
 ---
 
