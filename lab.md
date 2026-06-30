@@ -1,6 +1,5 @@
 # Lab Notebook
 
-Maintain Lab notebook here.
 
 # Lab 1: Getting Started with Vi, Linux Commands, and Git
 
@@ -409,7 +408,6 @@ This experiment demonstrates how to use the **Signal Generator (W1)** in **Scopy
 ### Oscilloscope Observation (CH1)
 ![Scopy Oscilloscope Screenshot](./m2k-labs/freqgeninput.png)
 
-*(Ensure the image paths match the actual filenames in your repo.)*
 
 ## Observations
 - The Signal Generator (W1) successfully produced a stable sine wave at the configured parameters.  
@@ -420,6 +418,7 @@ This experiment demonstrates how to use the **Signal Generator (W1)** in **Scopy
 ## Conclusion
 This lab illustrates the process of generating and analyzing signals using the **ADALM2000 kit**. The results confirm the accuracy of Scopy’s Signal Generator and Oscilloscope modules for educational and diagnostic purposes.
 
+---
 ---
 ## USB Microphone System
 ### SOURCES & REFFERENCES
@@ -473,36 +472,26 @@ The microphone input is represented by a sinusoidal voltage source (**Vmic**). T
 
 The amplifier stage is modeled using a **high-gain voltage-controlled voltage source (E1)**, while **R5**, **R6**, and **C3** form the negative feedback network that determines the closed-loop gain and improves circuit stability. The output stage (**E2**) acts as a buffer, providing low output impedance to drive the load. Capacitors **C4** and **C5** are included for output filtering and stability.
 
-A transient simulation (`.tran`) is performed to observe the input and output waveforms. The NGSpice control script automatically measures the peak values of the input and output signals and calculates the voltage gain using:
+A transient simulation (`.tran`) is performed to observe the input and output waveforms. The NGSpice control script automatically measures the peak values of the input and output signals and calculates the voltage gain.
 
-\[
-\text{Gain} = \frac{V_{\text{out,peak}}}{V_{\text{in,peak}}}
-\]
-
-This implementation verifies the amplifier's functionality by comparing the amplified output with the applied microphone input and evaluating its gain under transient conditions.
 ![Practical circuit](./sch/practicalmic.png)
 
 ## Simulation Output
 
 The transient simulation validates the operation of the microphone preamplifier by comparing the input and output waveforms. The **left plot** shows the microphone input signal, a sinusoidal waveform with a peak amplitude of approximately **126 μV**. The **right plot** shows the amplified output signal centered around the **1.25 V bias voltage**, demonstrating proper single-supply operation while preserving the AC signal.
 
-The NGSpice measurement results indicate an input peak amplitude of approximately **126 μV** and an output peak amplitude of approximately **7.42 mV**. Using these values, the calculated voltage gain is:
-
-\[
-A_v = \frac{V_{\text{out,peak}}}{V_{\text{in,peak}}}
-     = \frac{7.42\ \text{mV}}{126\ \mu\text{V}}
-     \approx 58.9
-\]
+The NGSpice measurement results indicate an input peak amplitude of approximately **126 μV** and an output peak amplitude of approximately **7.42 mV**.
 
 The amplified output maintains the same frequency as the input while exhibiting a significantly larger amplitude, confirming the correct operation of the amplifier and the effectiveness of the feedback network. The simulation therefore verifies that the designed circuit provides a **voltage gain of approximately 59 V/V** without introducing distortion under the given operating conditions.
 
 ![Output](./sch/pracoutput.png)
 ---
 
+
 ---
 # MOSFET Parameter Extraction using ngspice (Sky130 PDK)
 
-## 📌 Overview
+##  Overview
 This report documents simulations performed in **ngspice** to extract MOSFET parameters.  
 The experiments include:
 - **Level‑1 vs Level‑49 model comparison** of Id–Vgs characteristics.
@@ -511,7 +500,7 @@ The experiments include:
 
 ---
 
-## 🖼️ Simulation Snapshots
+## Simulation Snapshots
 
 ### 1. Level‑1 vs Level‑49 Id–Vgs Comparison
 ![Level1 vs Level49 Id-Vgs](./sch/Nmosdiodeconnlvl1vslvl49.png)
@@ -567,7 +556,7 @@ The experiments include:
 
 ---
 
-## 📊 Summary of Results
+## Summary of Results
 ## Summary of Results
 
 | Experiment                     | Parameter(s)           | Value(s) |
@@ -579,7 +568,7 @@ The experiments include:
 
 ---
 
-## 📝 Conclusion
+## Conclusion
 - **Level‑49 model** provides realistic MOSFET behavior compared to the idealized Level‑1.  
 - **Threshold voltage** varies depending on extraction method and bias point, confirming the **body effect**.  
 - **γ (body effect coefficient)** quantifies the sensitivity of Vt to substrate bias.  
