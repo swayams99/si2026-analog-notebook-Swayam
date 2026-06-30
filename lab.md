@@ -421,6 +421,7 @@ This experiment demonstrates how to use the **Signal Generator (W1)** in **Scopy
 This lab illustrates the process of generating and analyzing signals using the **ADALM2000 kit**. The results confirm the accuracy of Scopy’s Signal Generator and Oscilloscope modules for educational and diagnostic purposes.
 
 ---
+---
 ## USB Microphone System
 ### SOURCES & REFFERENCES
 1. MEMS mic [Datasheet](https://cdn.sparkfun.com/assets/0/5/8/b/1/SPH8878LR5H-1_Lovato_DS.pdf)
@@ -473,31 +474,21 @@ The microphone input is represented by a sinusoidal voltage source (**Vmic**). T
 
 The amplifier stage is modeled using a **high-gain voltage-controlled voltage source (E1)**, while **R5**, **R6**, and **C3** form the negative feedback network that determines the closed-loop gain and improves circuit stability. The output stage (**E2**) acts as a buffer, providing low output impedance to drive the load. Capacitors **C4** and **C5** are included for output filtering and stability.
 
-A transient simulation (`.tran`) is performed to observe the input and output waveforms. The NGSpice control script automatically measures the peak values of the input and output signals and calculates the voltage gain using:
+A transient simulation (`.tran`) is performed to observe the input and output waveforms. The NGSpice control script automatically measures the peak values of the input and output signals and calculates the voltage gain.
 
-\[
-\text{Gain} = \frac{V_{\text{out,peak}}}{V_{\text{in,peak}}}
-\]
-
-This implementation verifies the amplifier's functionality by comparing the amplified output with the applied microphone input and evaluating its gain under transient conditions.
 ![Practical circuit](./sch/practicalmic.png)
 
 ## Simulation Output
 
 The transient simulation validates the operation of the microphone preamplifier by comparing the input and output waveforms. The **left plot** shows the microphone input signal, a sinusoidal waveform with a peak amplitude of approximately **126 μV**. The **right plot** shows the amplified output signal centered around the **1.25 V bias voltage**, demonstrating proper single-supply operation while preserving the AC signal.
 
-The NGSpice measurement results indicate an input peak amplitude of approximately **126 μV** and an output peak amplitude of approximately **7.42 mV**. Using these values, the calculated voltage gain is:
-
-\[
-A_v = \frac{V_{\text{out,peak}}}{V_{\text{in,peak}}}
-     = \frac{7.42\ \text{mV}}{126\ \mu\text{V}}
-     \approx 58.9
-\]
+The NGSpice measurement results indicate an input peak amplitude of approximately **126 μV** and an output peak amplitude of approximately **7.42 mV**.
 
 The amplified output maintains the same frequency as the input while exhibiting a significantly larger amplitude, confirming the correct operation of the amplifier and the effectiveness of the feedback network. The simulation therefore verifies that the designed circuit provides a **voltage gain of approximately 59 V/V** without introducing distortion under the given operating conditions.
 
 ![Output](./sch/pracoutput.png)
 ---
+
 
 ---
 # MOSFET Parameter Extraction using ngspice (Sky130 PDK)
